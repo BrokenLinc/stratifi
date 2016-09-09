@@ -62,9 +62,9 @@ setTimeout(() => {
 // $(document).on('mousedown', function() {
 // 	play(['bass-drum', 'closed-hat', 'snare'][rint(0,2)]);
 // });
-$(document).on('mousedown', function(e) {
-	play('marimba', scale[rint(0, scale.length - 1)], 100);
-});
+// $(document).on('mousedown', function(e) {
+// 	play('marimba', scale[rint(0, scale.length - 1)], 100);
+// });
 
 //setup (run after config)
 MIDI.loadPlugin({

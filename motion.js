@@ -52,16 +52,19 @@
           if (device.instrument == 'drums') {
             play(getDrumSound(device.adjustedDirection));
           } else {
-            play('marimba', scale[rint(0, scale.length - 1)], 350);
+            play(device.instrument, scale[rint(0, scale.length - 1)], 350);
           }
         }
       }
     }
 
-    $('.js-set-inst').on('click', changeInstruments);
+    $('.instrument').on('click', changeInstruments);
     function changeInstruments(ev) {
-      var inst = $(ev.target).attr('data-inst');
-      device.instrument = inst;
+      var $inst = $(this);
+      $('.instrument').removeClass('active');
+      $inst.addClass('active');
+      device.instrument = $inst.attr('data-inst');
+      console.log(device);
     }
 
     function orientation(e) {

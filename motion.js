@@ -1,5 +1,8 @@
 (function(){
 
+    var BUFFER_SIZE = 6;
+    var STRIKE_SENSITIVITY = 200;
+
     var $motion = $('#motion');
     var $orientation = $('#orientation');
     var $calibrate = $('#calibrate');
@@ -22,12 +25,17 @@
         .reduce((carry, num) => carry + num, 0));
       var adjustedAccell = device.calibrationAccell - device.accell;
       aBuffer.push(adjustedAccell);
-      if (aBuffer.length > 6) {
+      if (aBuffer.length > BUFFER_SIZE) {
         aBuffer.shift();
-        var buffer = aBuffer
+        var b = aBuffer
           .concat()
           .sort();
-        $motion.text(buffer.join(', '));
+        var diff = Math.abs(b[0] - b[5]);
+        aBuffer = [];
+        $motion.text(diff);
+        if (diff >= STRIKE_SENSITIVITY) {
+          play('snare');
+        }
       }
     }
 

@@ -7,13 +7,25 @@
     var $orientation = $('#orientation');
     var $calibrate = $('#calibrate');
     var $notes = $('#notes');
+    var $drumsound = $('#drumsound');
 
     var device = {
+      instrument: 'drums',
       calibrationPoint: 0,
       calibrationAccell: 0,
       direction: 0,
-      accell: 0
+      accell: 0,
+      adjustedDirection: 0
     };
+
+    function getDrumSound(val) {
+      if (val == 0) 
+        return 'bass-drum';
+      else if (val < 0)
+        return 'snare';
+      else
+        return 'closed-hat'
+    }
 
     var aBuffer = [];
 
@@ -30,20 +42,32 @@
         var b = aBuffer
           .concat()
           .sort();
-        var diff = Math.abs(b[0] - b[5]);
-        aBuffer = [];
-        $motion.text(diff);
+        var diff = Math.abs(b[0] - b[BUFFER_SIZE - 1]);
+        // $motion.text(diff);
         if (diff >= STRIKE_SENSITIVITY) {
-          play('snare');
+          aBuffer = [];
+          $('body').css('background-color', 'red');
+          setTimeout(() => $('body').css('background-color', ''), 100);
+          $drumsound.text(getDrumSound(device.adjustedDirection));
+          if (device.instrument == 'drums') {
+            play(getDrumSound(device.adjustedDirection));
+          } else {
+            play('marimba', scale[rint(0, scale.length - 1)], 350);
+          }
         }
       }
     }
 
+    $('.js-set-inst').on('click', changeInstruments);
+    function changeInstruments(ev) {
+      var inst = $(ev.target).attr('data-inst');
+      device.instrument = inst;
+    }
+
     function orientation(e) {
-      device.direction = Math.ceil((e.alpha * .009) || 0);
-      var adjustedDirection = device.adjustedDirection = device.direction - device.calibrationPoint;
-      $notes.removeClass().addClass(adjustedDirection);
-      addItem($orientation, `<li>${adjustedDirection}</li>`);
+      device.direction = Math.ceil((e.alpha * .03) || 0);
+      device.adjustedDirection = device.calibrationPoint - device.direction;
+      addItem($orientation, `<li>${device.adjustedDirection}</li>`);
     }
 
     window.addEventListener('devicemotion', motion, false);

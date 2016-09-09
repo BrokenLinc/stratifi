@@ -52,11 +52,17 @@ var drums = {
 };
 var scale = generatePentaScale(44, 1);
 
+setTimeout(() => {
+	play('snare');
+	play('closed-hat');
+	play('bass-drum');
+}, 500);
+
 //demo interactions
-$(document).on('mousedown', function() {
-	play(['bass-drum', 'closed-hat', 'snare'][rint(0,2)]);
-});
-$(document).on('keydown', function(e) {
+// $(document).on('mousedown', function() {
+// 	play(['bass-drum', 'closed-hat', 'snare'][rint(0,2)]);
+// });
+$(document).on('mousedown', function(e) {
 	play('marimba', scale[rint(0, scale.length - 1)], 100);
 });
 

@@ -9,10 +9,14 @@ html { font-size: 32px !important; }
 }
 
 #calibrate {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
+  //position: absolute;
+  //bottom: 0;
+  //width: 100%;
+  //height: 100px;
+}
+
+.status {
+	display: none;
 }
 
 .content {
@@ -32,13 +36,23 @@ html { font-size: 32px !important; }
 	padding-top: 20px;
 }
 
-.header img {
+.header .logo:after {
+	content: "";
+	display: block;
+	width: 140px;
+	height: 3px;
+	border-radius: 100px;
+	background: #3CCAB3;
+	margin-top: 10px;
+}
+
+.header .logo img {
 	width: 140px;
 	height: auto;
 	margin: auto;
 }
 
-.instrument {
+.calibrate {
 }
 
 .play-background {
@@ -70,7 +84,29 @@ html { font-size: 32px !important; }
 	left: 0;
 	right: 0;
 	min-height: 74px;
+	display: flex;
+	flex-flow: row;
 	background: linear-gradient(#214C43, #193A33);
+	padding: 10px 10px 0 10px;
 	box-shadow: 0px -2px 7px 0px rgba(0,0,0,0.20);
+}
 
+.instrument {
+	//display: inline-block;
+	flex: 1;
+	outline: none;
+	border: none;
+	background: none;
+	border-bottom: 3px solid transparent;
+	padding: 6px;
+}
+
+.instrument:hover, .instrument:focus, instrument.active {
+	border-bottom: 3px solid #E29F38;
+}
+
+.instrument img {
+	width: 50px;
+	height: auto;
+	margin: 4px;
 }

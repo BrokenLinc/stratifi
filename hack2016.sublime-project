@@ -1,0 +1,13 @@
+{
+    "folders":
+    [
+        {
+        	"path":".",
+            "folder_exclude_patterns": ["FluidR3_GM"]
+        }
+    ],
+    "settings":
+    {
+        "tab_size": 4
+    }
+}

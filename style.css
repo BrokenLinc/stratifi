@@ -31,9 +31,12 @@ html { font-size: 32px !important; }
 }
 
 .header {
+	width: 140px;
 	min-height: 40px;
 	position: absolute;
 	top: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 	padding-top: 20px;
 	text-align: center;
 }
@@ -49,7 +52,6 @@ html { font-size: 32px !important; }
 }
 
 .header .logo img {
-	width: 140px;
 	height: auto;
 	margin: auto;
 }
@@ -63,7 +65,7 @@ html { font-size: 32px !important; }
 	border-radius: 300px;
 	background: linear-gradient(45deg,#E29F38,#3CCAB3);
 	padding: 10px;
-	filter: blur(40px);
+	//filter: blur(40px);
 }
 
 .play {

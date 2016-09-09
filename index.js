@@ -27,8 +27,7 @@ function generatePentaScale(startingWith, octaves) {
 // Notes to numbers: https://newt.phys.unsw.edu.au/jw/graphics/notesinvert.GIF
 function play(instrument, note, velocity) {
 	if(drums[instrument]) {
-		drums[instrument].currentTime = 0;
-		drums[instrument].volume = 0.5;
+		drums[instrument].stop();
 		drums[instrument].play();
 	} else {
 		var delay = 0;
@@ -47,9 +46,9 @@ var instruments = [
 	'marimba'
 ];
 var drums = {
-	'bass-drum': new Audio("soundfiles/bass-drum.wav"),
-	'closed-hat': new Audio("soundfiles/closed-hat.mp3"),
-	'snare': new Audio("soundfiles/snare.wav")
+	'bass-drum': new Howl({src:["soundfiles/bass-drum.wav"]}),
+	'closed-hat': new Howl({src:["soundfiles/closed-hat.mp3"]}),
+	'snare': new Howl({src:["soundfiles/snare.wav"]})
 };
 var scale = generatePentaScale(44, 1);
 

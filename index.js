@@ -50,7 +50,7 @@ var drums = {
 	'closed-hat': new Howl({src:["soundfiles/closed-hat.mp3"]}),
 	'snare': new Howl({src:["soundfiles/snare.wav"]})
 };
-var scale = generatePentaScale(44, 1);
+var scale = generatePentaScale(44, 2);
 
 setTimeout(() => {
 	play('snare');

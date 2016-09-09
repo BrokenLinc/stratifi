@@ -93,7 +93,6 @@ html { font-size: 32px !important; }
 }
 
 .instrument {
-	//display: inline-block;
 	flex: 1;
 	outline: none;
 	border: none;

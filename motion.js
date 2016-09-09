@@ -1,7 +1,7 @@
 (function(){
 
-    var BUFFER_SIZE = 6;
-    var STRIKE_SENSITIVITY = 200;
+    var BUFFER_SIZE = 5;
+    var STRIKE_SENSITIVITY = 100;
 
     var $motion = $('#motion');
     var $orientation = $('#orientation');

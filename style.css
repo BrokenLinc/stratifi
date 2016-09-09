@@ -34,6 +34,7 @@ html { font-size: 32px !important; }
 	position: absolute;
 	top: 0;
 	padding-top: 20px;
+	text-align: center;
 }
 
 .header .logo:after {
@@ -70,12 +71,11 @@ html { font-size: 32px !important; }
 	width: 240px;
 	height: 240px;
 	border-radius: 300px;
-	background: linear-gradient(45deg,#214C43,#193A33);
+	background: linear-gradient(45deg,#193A33,#214C43);
 }
 
 .play:hover, .play:focus {
-	background: linear-gradient(45deg,#193A33,#214C43);
-	//background: pink;
+	background: linear-gradient(45deg,#214C43,#193A33);
 }
 
 .instrument-menu {

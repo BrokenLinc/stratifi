@@ -1,4 +1,12 @@
-html { font-size: 2em; }
+html { font-size: 32px !important; }
+
+.instruments {
+  display: flex;
+}
+
+.instruments button {
+  flex: 1;
+}
 
 #calibrate {
   position: absolute;

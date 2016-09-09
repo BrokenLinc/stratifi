@@ -7,7 +7,7 @@
 		<title>Hack2016</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/slate/bootstrap.min.css">
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="./style.css">
 		<!--[if lt IE 9]>
 		<script src="http://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="http://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -15,16 +15,23 @@
 	</head>
 	<body>
 
+		<div class="instruments">
+			<button class="btn btn-default js-set-inst" data-inst="drums">Drums</button>
+			<button class="btn btn-default js-set-inst" data-inst="marimba">Marimba</button>
+		</div>
+
 		<p id="motion"></p>
+		<p id="drumsound"></p>
 		<ul id="orientation">
 			<li></li>
 		</ul>
 
-		<button id="calibrate">Calibrate</button>
+		<button class="btn btn-primary" id="calibrate">Calibrate</button>
 
 		<script src="https://cdn.jsdelivr.net/lodash/4.15.0/lodash.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.0/howler.min.js"></script>
 
 		<script src="js/Base64.js" type="text/javascript"></script>
 		<script src="js/base64binary.js" type="text/javascript"></script>

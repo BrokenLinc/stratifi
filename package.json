@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/browser-sync start --server --files '*.html, css/*.css'"
+    "dev": "./node_modules/.bin/browser-sync start --server --files '*.html, **/*.css, **/*.js'"
   },
   "author": "",
   "license": "ISC",

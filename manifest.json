@@ -1,0 +1,8 @@
+{
+  "name": "Stratifi",
+  "theme_color": "#1d423a",
+  "background_color": "#1d423a",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "/"
+}

@@ -101,7 +101,7 @@ html { font-size: 32px !important; }
 	padding: 6px;
 }
 
-.instrument:hover, .instrument:focus, instrument.active {
+.instrument:hover, .instrument:focus, .instrument.active {
 	border-bottom: 3px solid #E29F38;
 }
 
